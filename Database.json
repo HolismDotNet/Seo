@@ -1,0 +1,67 @@
+{
+    "name": "Seo",
+    "tables": [
+        {
+            "name": "ParametersObjects",
+            "columns": [
+                {
+                    "name": "PageTitle"
+                },
+                {
+                    "name": "MetaTitle"
+                },
+                {
+                    "name": "MetaDescription",
+                    "type": "longText"
+                },
+                {
+                    "name": "Keywords"
+                },
+                {
+                    "name": "PageDescription",
+                    "type": "longText"
+                },
+                {
+                    "name": "ExtraData",
+                    "type": "longText"
+                }
+            ]
+        },
+        {
+            "name": "EntityTypeParameters",
+            "columns": [
+                {
+                    "name": "EntityTypeGuid"
+                },
+                {
+                    "name": "ParametersObjectId"
+                }
+            ]
+        },
+        {
+            "name": "EntityParameters",
+            "columns": [
+                {
+                    "name": "EntityTypeGuid"
+                },
+                {
+                    "name": "EntityGuid"
+                },
+                {
+                    "name": "ParametersObjectId"
+                }
+            ]
+        },
+        {
+            "name": "QueryParameters",
+            "columns": [
+                {
+                    "name": "SortedParameters"
+                },
+                {
+                    "name": "ParametersObjectId"
+                }
+            ]
+        }
+    ]
+}
