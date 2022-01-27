@@ -1,8 +1,8 @@
 namespace Seo;
 
-public class QueryParameterBusiness : Business<QueryParameter, QueryParameter>
+public class QueryParameterBusiness : Business<Seo.QueryParameter, Seo.QueryParameter>
 {
-    protected override ReadRepository<QueryParameter> ReadRepository => Repository.QueryParameter;
+    protected override ReadRepository<Seo.QueryParameter> ReadRepository => Seo.Repository.QueryParameter;
 
-    protected override Repository<QueryParameter> Repository => Repository.QueryParameter;
+    protected override Repository<Seo.QueryParameter> WriteRepository => Seo.Repository.QueryParameter;
 }

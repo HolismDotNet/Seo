@@ -4,5 +4,5 @@ public class QueryParameterController : Controller<QueryParameter, QueryParamete
 {
     public override ReadBusiness<QueryParameter> ReadBusiness => new QueryParameterBusiness();
 
-    public override Business<QueryParameter> Business => new QueryParameterBusiness();
+    public override Business<QueryParameter, QueryParameter> Business => new QueryParameterBusiness();
 }
