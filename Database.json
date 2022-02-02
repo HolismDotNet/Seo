@@ -23,7 +23,8 @@
                 },
                 {
                     "name": "ExtraData",
-                    "type": "longText"
+                    "type": "longText",
+                    "isNullable": true
                 }
             ]
         },
