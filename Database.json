@@ -63,5 +63,24 @@
                 }
             ]
         }
+    ],
+    "views": [
+        {
+            "name": "EntityParameterViews",
+            "query": [
+                "select",
+                "  ep.Id,",
+                "  ep.EntityTypeGuid,",
+                "  ep.EntityGuid,",
+                "  po.PageTitle,",
+                "  po.MetaTitle,",
+                "  po.MetaDescription,",
+                "  po.Keywords,",
+                "  po.PageDescription",
+                "from EntityParameters ep",
+                "inner join ParametersObjects po",
+                "on ep.ParametersObjectId = po.Id"
+            ]
+        }
     ]
 }

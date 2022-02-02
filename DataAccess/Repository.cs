@@ -10,6 +10,14 @@ public class Repository
         }
     }
 
+    public static Repository<Seo.EntityParameterView> EntityParameterView
+    {
+        get
+        {
+            return new Repository<Seo.EntityParameterView>(new SeoContext());
+        }
+    }
+
     public static Repository<Seo.EntityTypeParameter> EntityTypeParameter
     {
         get

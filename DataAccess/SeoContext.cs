@@ -6,6 +6,8 @@ public class SeoContext : DatabaseContext
 
     public DbSet<Seo.EntityParameter> EntityParameters { get; set; }
 
+    public DbSet<Seo.EntityParameterView> EntityParameterViews { get; set; }
+
     public DbSet<Seo.EntityTypeParameter> EntityTypeParameters { get; set; }
 
     public DbSet<Seo.ParametersObject> ParametersObjects { get; set; }
