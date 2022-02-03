@@ -14,4 +14,11 @@ public class EntityParameterController : Controller<EntityParameterView, EntityP
         new ParametersObjectBusiness().Create(parametersObject);
         entityParameter.ParametersObjectId = parametersObject.Id;
     };
+
+    public override Action<EntityParameter> PreUpdate => entityParameter => 
+    {
+        var parametersObject = Extract<ParametersObject>();
+        parametersObject.Id = entityParameter.ParametersObjectId;
+        new ParametersObjectBusiness().Update(parametersObject);
+    };
 }
