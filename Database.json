@@ -15,7 +15,8 @@
                     "type": "longText"
                 },
                 {
-                    "name": "Keywords"
+                    "name": "Keywords",
+                    "isNullable": true
                 },
                 {
                     "name": "PageDescription",
@@ -32,7 +33,8 @@
             "name": "EntityTypeParameters",
             "columns": [
                 {
-                    "name": "EntityTypeGuid"
+                    "name": "EntityTypeGuid",
+                    "isUnique": true
                 },
                 {
                     "name": "ParametersObjectId"
@@ -51,13 +53,23 @@
                 {
                     "name": "ParametersObjectId"
                 }
+            ],
+            "indexes": [
+                {
+                    "columns": [
+                        "EntityTypeGuid",
+                        "EntityGuid"
+                    ],
+                    "isUnique": true
+                }
             ]
         },
         {
             "name": "QueryParameters",
             "columns": [
                 {
-                    "name": "SortedParameters"
+                    "name": "SortedParameters",
+                    "isUnique": true
                 },
                 {
                     "name": "ParametersObjectId"

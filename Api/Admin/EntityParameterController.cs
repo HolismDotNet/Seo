@@ -6,6 +6,12 @@ public class EntityParameterController : Controller<EntityParameterView, EntityP
 
     public override Business<EntityParameterView, EntityParameter> Business => new EntityParameterBusiness();
 
+    [HttpGet]
+    public EntityParameterView GetRecord(string entityType, Guid entityGuid)
+    {
+        return new EntityParameterBusiness().Get(entityType, entityGuid);
+    }
+
     public override Action<EntityParameter> PreCreation => entityParameter =>
     {
         var entityType = HttpContext.ExtractProperty("entityType").ToString();
