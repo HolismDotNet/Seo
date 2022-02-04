@@ -1,6 +1,6 @@
 namespace Seo;
 
-public class NodeBusiness : Business<NodeView, Node>
+public class NodeBusiness : TreeBusiness<NodeView, Node>
 {
     protected override ReadRepository<NodeView> ReadRepository => Repository.NodeView;
 
