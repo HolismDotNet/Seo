@@ -34,6 +34,14 @@ public class Repository
         }
     }
 
+    public static Repository<Seo.NodeView> NodeView
+    {
+        get
+        {
+            return new Repository<Seo.NodeView>(new SeoContext());
+        }
+    }
+
     public static Repository<Seo.ParametersObject> ParametersObject
     {
         get

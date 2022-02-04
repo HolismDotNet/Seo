@@ -12,6 +12,8 @@ public class SeoContext : DatabaseContext
 
     public DbSet<Seo.Node> Nodes { get; set; }
 
+    public DbSet<Seo.NodeView> NodeViews { get; set; }
+
     public DbSet<Seo.ParametersObject> ParametersObjects { get; set; }
 
     public DbSet<Seo.QueryParameter> QueryParameters { get; set; }

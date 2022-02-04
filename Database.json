@@ -145,6 +145,22 @@
                 "inner join ParametersObjects po",
                 "on ep.ParametersObjectId = po.Id"
             ]
+        },
+        {
+            "name": "NodeViews",
+            "query": [
+                "select",
+                "    n.Id,",
+                "    n.`Key`,",
+                "    n.ParentId,",
+                "    n.NodeTypeId,",
+                "    n.Value,",
+                "    nt.`Key` as NodeTypeKey",
+                "from Nodes n",
+                "inner join NodeTypes nt",
+                "on n.NodeTypeId = nt.Id",
+                "order by n.Id"
+            ]
         }
     ]
 }
