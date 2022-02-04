@@ -10,9 +10,15 @@ public class SeoContext : DatabaseContext
 
     public DbSet<Seo.EntityTypeParameter> EntityTypeParameters { get; set; }
 
+    public DbSet<Seo.Node> Nodes { get; set; }
+
     public DbSet<Seo.ParametersObject> ParametersObjects { get; set; }
 
     public DbSet<Seo.QueryParameter> QueryParameters { get; set; }
+
+    public DbSet<Seo.Snippet> Snippets { get; set; }
+
+    public DbSet<Seo.SnippetValue> SnippetValues { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

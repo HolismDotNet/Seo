@@ -26,6 +26,14 @@ public class Repository
         }
     }
 
+    public static Repository<Seo.Node> Node
+    {
+        get
+        {
+            return new Repository<Seo.Node>(new SeoContext());
+        }
+    }
+
     public static Repository<Seo.ParametersObject> ParametersObject
     {
         get
@@ -39,6 +47,22 @@ public class Repository
         get
         {
             return new Repository<Seo.QueryParameter>(new SeoContext());
+        }
+    }
+
+    public static Repository<Seo.Snippet> Snippet
+    {
+        get
+        {
+            return new Repository<Seo.Snippet>(new SeoContext());
+        }
+    }
+
+    public static Repository<Seo.SnippetValue> SnippetValue
+    {
+        get
+        {
+            return new Repository<Seo.SnippetValue>(new SeoContext());
         }
     }
 }

@@ -77,15 +77,50 @@
             ]
         },
         {
+            "name": "NodeTypes",
+            "isEnum": true,
+            "enumItems": [
+                {
+                    "key": "JsonObject",
+                    "value": 1
+                },
+                {
+                    "key": "JsonArray",
+                    "value": 2
+                },
+                {
+                    "key": "Text",
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "name": "Nodes",
+            "columns": [
+                {
+                    "name": "Key"
+                },
+                {
+                    "name": "ParentId"
+                },
+                {
+                    "name": "NodeTypeId"
+                }
+            ]
+        },
+        {
             "name": "Snippets",
             "columns": [
                 {
                     "name": "Key"
                 },
                 {
-                    
+                    "name": "Title"
                 }
             ]
+        },
+        {
+            "name": "SnippetValues"
         }
     ],
     "views": [
