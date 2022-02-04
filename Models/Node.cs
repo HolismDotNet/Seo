@@ -11,9 +11,11 @@ public class Node : IEntity, IKey
 
     public string Key { get; set; }
 
-    public long ParentId { get; set; }
+    public long? ParentId { get; set; }
 
     public long NodeTypeId { get; set; }
+
+    public string Value { get; set; }
 
     public dynamic RelatedItems { get; set; }
 }

@@ -101,10 +101,15 @@
                     "name": "Key"
                 },
                 {
-                    "name": "ParentId"
+                    "name": "ParentId",
+                    "isNullable": true
                 },
                 {
                     "name": "NodeTypeId"
+                },
+                {
+                    "name": "Value",
+                    "isNullable": true
                 }
             ]
         },
