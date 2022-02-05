@@ -91,14 +91,6 @@
                 {
                     "key": "Text",
                     "value": 3
-                },
-                {
-                    "key": "Number",
-                    "value": 4
-                },
-                {
-                    "key": "Boolean",
-                    "value": 5
                 }
             ]
         },

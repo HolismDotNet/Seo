@@ -1,34 +1,59 @@
-INSERT ignore INTO `Nodes` (`Key`, `ParentId`, `NodeTypeId`, `Value`) VALUES
-('FAQPage',	NULL,	1,	NULL);
+select Id into @jsonObjectId
+from NodeTypes 
+where `Key` = 'JsonObject';
 
-INSERT ignore INTO `Nodes` (`Key`, `ParentId`, `NodeTypeId`, `Value`) VALUES
-('@context',	(select Id from Nodes where `Key` = 'FAQPage'),	3,	'https://schema.org'),
-('@type',	(select Id from Nodes where `Key` = 'FAQPage'),	3,	'FAQPage'),
-('mainEntity',	(select Id from Nodes where `Key` = 'FAQPage'),	2,	NULL);
+select Id into @jsonArrayId
+from NodeTypes
+where `Key` = 'JsonArray';
 
-INSERT ignore INTO `Nodes` (`Key`, `ParentId`, `NodeTypeId`, `Value`) VALUES
-('Question',	(select Id from Nodes where `Key` = 'mainEntity'),	1,	NULL);
+select Id into @textId
+where `Key` = 'text';
 
-INSERT ignore INTO `Nodes` (`Key`, `ParentId`, `NodeTypeId`, `Value`) VALUES
-('@type',	(select Id from Nodes where `Key` = 'Question'),	3,	'Question'),
-('name',	(select Id from Nodes where `Key` = 'Question'),	3,	NULL),
-('acceptedAnswer',	select Id from Nodes where `Key` = 'Question'),	1,	NULL);
+select *
+from Nodes 
+where `Key` = 'FAQPage';
 
-INSERT ignore INTO `Nodes` (`Key`, `ParentId`, `NodeTypeId`, `Value`) VALUES
-('@type',	(select Id from Nodes where `Key` = 'acceptedAnswer'),	3,	'Answer'),
-('text',	(select Id from Nodes where `Key` = 'acceptedAnswer'),	3,	NULL);
+if not found_rows() then
+    insert into `Nodes` (`Key`, `ParentId`, `NodeTypeId`, `Value`) values
+    ('FAQPage',	null,	@jsonObjectId,	null)
+end if;
 
-INSERT ignore INTO `Nodes` (`Key`, `ParentId`, `NodeTypeId`, `Value`) VALUES
-('Product',	NULL,	1,	NULL),
-('@context',	(select Id from Nodes where `Key` = 'Product'),	3,	'https://schema.org/'),
-('@type',	(select Id from Nodes where `Key` = 'Product'),	3,	'Product'),
-('name',	(select Id from Nodes where `Key` = 'Product'),	3,	NULL),
-('image',	(select Id from Nodes where `Key` = 'Product'),	2,	NULL),
-('description',	(select Id from Nodes where `Key` = 'Product'),	3,	NULL),
-('brand',	(select Id from Nodes where `Key` = 'Product'),	1,	NULL),
-('@type',	(select Id from Nodes where `Key` = 'Brand'),	3,	'Brand'),
-('name',	(select Id from Nodes where `Key` = 'Brand'),	3,	NULL),
-('aggregateRating',	(select Id from Nodes where `Key` = 'Product'),	1,	NULL),
-('@type',	(select Id from Nodes where `Key` = 'aggregateRating'),	3,	'AggregateRating'),
-('ratingValue',	(select Id from Nodes where `Key` = 'aggregateRating'),	3,	NULL),
-('reviewCount',	(select Id from Nodes where `Key` = 'aggregateRating'),	3,	NULL);
+select Id into @faqpageId
+from Nodes
+where `Key` = 'FAQPage';
+
+insert ignore into `Nodes` (`Key`, `ParentId`, `NodeTypeId`, `Value`) values
+('@context',	@faqpageId,	@textId,	'https://schema.org'),
+('@type',	@faqpageId,	@textId,	'FAQPage'),
+('mainEntity',	@faqpageId,	@jsonArrayId,	null);
+
+select Id into @mainEntityId
+from Nodes 
+where `Key` = 'mainEntity'
+
+insert ignore into `Nodes` (`Key`, `ParentId`, `NodeTypeId`, `Value`) values
+('Question',	(select Id from Nodes where `Key` = 'mainEntity'),	1,	null);
+
+insert ignore into `Nodes` (`Key`, `ParentId`, `NodeTypeId`, `Value`) values
+('@type',	(select Id from Nodes where `Key` = 'Question'),	@textId,	'Question'),
+('name',	(select Id from Nodes where `Key` = 'Question'),	@textId,	null),
+('acceptedAnswer',	select Id from Nodes where `Key` = 'Question'),	1,	null);
+
+insert ignore into `Nodes` (`Key`, `ParentId`, `NodeTypeId`, `Value`) values
+('@type',	(select Id from Nodes where `Key` = 'acceptedAnswer'),	@textId,	'Answer'),
+('text',	(select Id from Nodes where `Key` = 'acceptedAnswer'),	@textId,	null);
+
+insert ignore into `Nodes` (`Key`, `ParentId`, `NodeTypeId`, `Value`) values
+('Product',	null,	1,	null),
+('@context',	(select Id from Nodes where `Key` = 'Product'),	@textId,	'https://schema.org/'),
+('@type',	(select Id from Nodes where `Key` = 'Product'),	@textId,	'Product'),
+('name',	(select Id from Nodes where `Key` = 'Product'),	@textId,	null),
+('image',	(select Id from Nodes where `Key` = 'Product'),	@jsonArrayId,	null),
+('description',	(select Id from Nodes where `Key` = 'Product'),	@textId,	null),
+('brand',	(select Id from Nodes where `Key` = 'Product'),	1,	null),
+('@type',	(select Id from Nodes where `Key` = 'Brand'),	@textId,	'Brand'),
+('name',	(select Id from Nodes where `Key` = 'Brand'),	@textId,	null),
+('aggregateRating',	(select Id from Nodes where `Key` = 'Product'),	1,	null),
+('@type',	(select Id from Nodes where `Key` = 'aggregateRating'),	@textId,	'AggregateRating'),
+('ratingValue',	(select Id from Nodes where `Key` = 'aggregateRating'),	@textId,	null),
+('reviewCount',	(select Id from Nodes where `Key` = 'aggregateRating'),	@textId,	null);
