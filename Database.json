@@ -91,6 +91,14 @@
                 {
                     "key": "Text",
                     "value": 3
+                },
+                {
+                    "key": "Number",
+                    "value": 4
+                },
+                {
+                    "key": "Boolean",
+                    "value": 5
                 }
             ]
         },
@@ -110,6 +118,15 @@
                 {
                     "name": "Value",
                     "isNullable": true
+                }
+            ],
+            "indexes": [
+                {
+                    "columns": [
+                        "Key",
+                        "ParentId"
+                    ],
+                    "isUnique": true
                 }
             ]
         },
