@@ -1,6 +1,6 @@
 namespace Seo;
 
-public class NodeView : IEntity, IKey
+public class NodeView : IEntity, IKey, IParent
 {
     public NodeView()
     {

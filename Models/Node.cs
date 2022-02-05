@@ -1,6 +1,6 @@
 namespace Seo;
 
-public class Node : IEntity, IKey
+public class Node : IEntity, IKey, IParent
 {
     public Node()
     {
