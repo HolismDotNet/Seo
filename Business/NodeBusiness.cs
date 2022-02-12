@@ -2,7 +2,7 @@ namespace Seo;
 
 public class NodeBusiness : TreeBusiness<NodeView, Node>
 {
-    protected override ReadRepository<NodeView> ReadRepository => Repository.NodeView;
+    protected override Read<NodeView> Read => Repository.NodeView;
 
-    protected override Repository<Node> WriteRepository => Repository.Node;
+    protected override Write<Node> Write => Repository.Node;
 }

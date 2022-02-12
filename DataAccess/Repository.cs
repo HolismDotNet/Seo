@@ -2,75 +2,75 @@ namespace Seo;
 
 public class Repository
 {
-    public static Repository<Seo.EntityParameter> EntityParameter
+    public static Write<Seo.EntityParameter> EntityParameter
     {
         get
         {
-            return new Repository<Seo.EntityParameter>(new SeoContext());
+            return new Write<Seo.EntityParameter>(new SeoContext());
         }
     }
 
-    public static Repository<Seo.EntityParameterView> EntityParameterView
+    public static Write<Seo.EntityParameterView> EntityParameterView
     {
         get
         {
-            return new Repository<Seo.EntityParameterView>(new SeoContext());
+            return new Write<Seo.EntityParameterView>(new SeoContext());
         }
     }
 
-    public static Repository<Seo.EntityTypeParameter> EntityTypeParameter
+    public static Write<Seo.EntityTypeParameter> EntityTypeParameter
     {
         get
         {
-            return new Repository<Seo.EntityTypeParameter>(new SeoContext());
+            return new Write<Seo.EntityTypeParameter>(new SeoContext());
         }
     }
 
-    public static Repository<Seo.Node> Node
+    public static Write<Seo.Node> Node
     {
         get
         {
-            return new Repository<Seo.Node>(new SeoContext());
+            return new Write<Seo.Node>(new SeoContext());
         }
     }
 
-    public static Repository<Seo.NodeView> NodeView
+    public static Write<Seo.NodeView> NodeView
     {
         get
         {
-            return new Repository<Seo.NodeView>(new SeoContext());
+            return new Write<Seo.NodeView>(new SeoContext());
         }
     }
 
-    public static Repository<Seo.ParametersObject> ParametersObject
+    public static Write<Seo.ParametersObject> ParametersObject
     {
         get
         {
-            return new Repository<Seo.ParametersObject>(new SeoContext());
+            return new Write<Seo.ParametersObject>(new SeoContext());
         }
     }
 
-    public static Repository<Seo.QueryParameter> QueryParameter
+    public static Write<Seo.QueryParameter> QueryParameter
     {
         get
         {
-            return new Repository<Seo.QueryParameter>(new SeoContext());
+            return new Write<Seo.QueryParameter>(new SeoContext());
         }
     }
 
-    public static Repository<Seo.Snippet> Snippet
+    public static Write<Seo.Snippet> Snippet
     {
         get
         {
-            return new Repository<Seo.Snippet>(new SeoContext());
+            return new Write<Seo.Snippet>(new SeoContext());
         }
     }
 
-    public static Repository<Seo.SnippetValue> SnippetValue
+    public static Write<Seo.SnippetValue> SnippetValue
     {
         get
         {
-            return new Repository<Seo.SnippetValue>(new SeoContext());
+            return new Write<Seo.SnippetValue>(new SeoContext());
         }
     }
 }

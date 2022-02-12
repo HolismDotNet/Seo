@@ -2,9 +2,9 @@ namespace Seo;
 
 public class SnippetBusiness : Business<Snippet, Snippet>
 {
-    protected override ReadRepository<Snippet> ReadRepository => Repository.Snippet;
+    protected override Read<Snippet> Read => Repository.Snippet;
 
-    protected override Repository<Snippet> WriteRepository => Repository.Snippet;
+    protected override Write<Snippet> Write => Repository.Snippet;
 
     /*
     definitions
