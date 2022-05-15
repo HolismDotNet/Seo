@@ -75,66 +75,6 @@
                     "name": "ParametersObjectId"
                 }
             ]
-        },
-        {
-            "name": "NodeTypes",
-            "isEnum": true,
-            "enumItems": [
-                {
-                    "key": "JsonObject",
-                    "value": 1
-                },
-                {
-                    "key": "JsonArray",
-                    "value": 2
-                },
-                {
-                    "key": "Text",
-                    "value": 3
-                }
-            ]
-        },
-        {
-            "name": "Nodes",
-            "columns": [
-                {
-                    "name": "Key"
-                },
-                {
-                    "name": "ParentId",
-                    "isNullable": true
-                },
-                {
-                    "name": "NodeTypeId"
-                },
-                {
-                    "name": "Value",
-                    "isNullable": true
-                }
-            ],
-            "indexes": [
-                {
-                    "columns": [
-                        "Key",
-                        "ParentId"
-                    ],
-                    "isUnique": true
-                }
-            ]
-        },
-        {
-            "name": "Snippets",
-            "columns": [
-                {
-                    "name": "Key"
-                },
-                {
-                    "name": "Title"
-                }
-            ]
-        },
-        {
-            "name": "SnippetValues"
         }
     ],
     "views": [
@@ -153,22 +93,6 @@
                 "from EntityParameters ep",
                 "inner join ParametersObjects po",
                 "on ep.ParametersObjectId = po.Id"
-            ]
-        },
-        {
-            "name": "NodeViews",
-            "query": [
-                "select",
-                "    n.Id,",
-                "    n.`Key`,",
-                "    n.ParentId,",
-                "    n.NodeTypeId,",
-                "    n.Value,",
-                "    nt.`Key` as NodeTypeKey",
-                "from Nodes n",
-                "inner join NodeTypes nt",
-                "on n.NodeTypeId = nt.Id",
-                "order by n.Id"
             ]
         }
     ]
