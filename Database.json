@@ -75,6 +75,18 @@
                     "name": "ParametersObjectId"
                 }
             ]
+        },
+        {
+            "name": "PathParameters",
+            "columns": [
+                {
+                    "name": "Path",
+                    "isUnique": true
+                },
+                {
+                    "name": "ParametersObjectId"
+                }
+            ]
         }
     ],
     "views": [
