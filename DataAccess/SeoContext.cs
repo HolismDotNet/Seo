@@ -12,6 +12,8 @@ public class SeoContext : DatabaseContext
 
     public DbSet<Seo.ParametersObject> ParametersObjects { get; set; }
 
+    public DbSet<Seo.PathParameter> PathParameters { get; set; }
+
     public DbSet<Seo.QueryParameter> QueryParameters { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)

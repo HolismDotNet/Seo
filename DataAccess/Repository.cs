@@ -34,6 +34,14 @@ public class Repository
         }
     }
 
+    public static Write<Seo.PathParameter> PathParameter
+    {
+        get
+        {
+            return new Write<Seo.PathParameter>(new SeoContext());
+        }
+    }
+
     public static Write<Seo.QueryParameter> QueryParameter
     {
         get
