@@ -10,4 +10,10 @@ public class QueryParameterBusiness : Business<QueryParameterView, QueryParamete
     {
         return "";
     }
+
+    public QueryParameterView Get(string sortedParameters)
+    {
+        var queryParameters = Get(i => i.SortedParameters == sortedParameters);
+        return queryParameters;
+    }
 }
