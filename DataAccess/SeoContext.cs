@@ -14,7 +14,11 @@ public class SeoContext : DatabaseContext
 
     public DbSet<Seo.PathParameter> PathParameters { get; set; }
 
+    public DbSet<Seo.PathParameterView> PathParameterViews { get; set; }
+
     public DbSet<Seo.QueryParameter> QueryParameters { get; set; }
+
+    public DbSet<Seo.QueryParameterView> QueryParameterViews { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

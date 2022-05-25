@@ -42,11 +42,27 @@ public class Repository
         }
     }
 
+    public static Write<Seo.PathParameterView> PathParameterView
+    {
+        get
+        {
+            return new Write<Seo.PathParameterView>(new SeoContext());
+        }
+    }
+
     public static Write<Seo.QueryParameter> QueryParameter
     {
         get
         {
             return new Write<Seo.QueryParameter>(new SeoContext());
+        }
+    }
+
+    public static Write<Seo.QueryParameterView> QueryParameterView
+    {
+        get
+        {
+            return new Write<Seo.QueryParameterView>(new SeoContext());
         }
     }
 }

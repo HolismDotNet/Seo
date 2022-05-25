@@ -1,8 +1,13 @@
 namespace Seo;
 
-public class QueryParameterBusiness : Business<Seo.QueryParameter, Seo.QueryParameter>
+public class QueryParameterBusiness : Business<QueryParameterView, QueryParameter>
 {
-    protected override Read<Seo.QueryParameter> Read => Seo.Repository.QueryParameter;
+    protected override Read<QueryParameterView> Read => Repository.QueryParameterView;
 
-    protected override Write<Seo.QueryParameter> Write => Seo.Repository.QueryParameter;
+    protected override Write<QueryParameter> Write => Repository.QueryParameter;
+
+    public string GetSortedQuery(object input)
+    {
+        return "";
+    }
 }

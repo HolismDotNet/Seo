@@ -106,6 +106,38 @@
                 "inner join ParametersObjects po",
                 "on ep.ParametersObjectId = po.Id"
             ]
+        },
+        {
+            "name": "PathParameterViews",
+            "query": [
+                "select",
+                "  pp.Id,",
+                "  pp.Path,",
+                "  po.PageTitle,",
+                "  po.MetaTitle,",
+                "  po.MetaDescription,",
+                "  po.Keywords,",
+                "  po.PageDescription",
+                "from PathParameters pp",
+                "inner join ParametersObjects po",
+                "on pp.ParametersObjectId = po.Id"
+            ]
+        },
+        {
+            "name": "QueryParameterViews",
+            "query": [
+                "select",
+                "  qp.Id,",
+                "  qp.SortedParameters,",
+                "  po.PageTitle,",
+                "  po.MetaTitle,",
+                "  po.MetaDescription,",
+                "  po.Keywords,",
+                "  po.PageDescription",
+                "from QueryParameters qp",
+                "inner join ParametersObjects po",
+                "on qp.ParametersObjectId = po.Id"
+            ]
         }
     ]
 }
