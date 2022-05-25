@@ -1,8 +1,8 @@
 namespace Seo;
 
-public class QueryParameterController : Controller<QueryParameter, QueryParameter>
+public class QueryParameterController : Controller<QueryParameterView, QueryParameter>
 {
-    public override ReadBusiness<QueryParameter> ReadBusiness => new QueryParameterBusiness();
+    public override ReadBusiness<QueryParameterView> ReadBusiness => new QueryParameterBusiness();
 
-    public override Business<QueryParameter, QueryParameter> Business => new QueryParameterBusiness();
+    public override Business<QueryParameterView, QueryParameter> Business => new QueryParameterBusiness();
 }
