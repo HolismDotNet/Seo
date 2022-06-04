@@ -34,7 +34,7 @@
             "columns": [
                 {
                     "name": "EntityTypeGuid",
-                    "isUnique": true
+                    "unique": true
                 },
                 {
                     "name": "ParametersObjectId"
@@ -60,7 +60,7 @@
                         "EntityTypeGuid",
                         "EntityGuid"
                     ],
-                    "isUnique": true
+                    "unique": true
                 }
             ]
         },
@@ -69,7 +69,7 @@
             "columns": [
                 {
                     "name": "SortedParameters",
-                    "isUnique": true
+                    "unique": true
                 },
                 {
                     "name": "ParametersObjectId"
@@ -81,7 +81,7 @@
             "columns": [
                 {
                     "name": "Path",
-                    "isUnique": true
+                    "unique": true
                 },
                 {
                     "name": "ParametersObjectId"
