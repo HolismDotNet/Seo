@@ -16,7 +16,7 @@
                 },
                 {
                     "name": "Keywords",
-                    "isNullable": true
+                    "nullable": true
                 },
                 {
                     "name": "PageDescription",
@@ -25,7 +25,7 @@
                 {
                     "name": "ExtraData",
                     "type": "longText",
-                    "isNullable": true
+                    "nullable": true
                 }
             ]
         },
